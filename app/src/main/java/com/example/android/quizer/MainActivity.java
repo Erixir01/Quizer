@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     Button scoreTotalButton;
     CheckBox questionFiveOptionOne, questionFiveOptionTwo, questionFiveOptionThree, questionFiveOptionFour;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         //assign button to refer an id from the xml file
         scoreTotalButton = (Button) findViewById(R.id.score_button);
-
-
-        //section B question five
-        //Assign checkbox id
-        questionFiveOptionOne = (CheckBox) findViewById(R.id.q5_selection1);
-        questionFiveOptionTwo = (CheckBox) findViewById(R.id.q5_selection2);
-        questionFiveOptionThree = (CheckBox) findViewById(R.id.q5_selection3);
-        questionFiveOptionFour = (CheckBox) findViewById(R.id.q5_selection4);
-
         // give the button an action to perform
         scoreTotalButton.setOnClickListener(new OnClickListener() {
 
@@ -64,18 +53,37 @@ public class MainActivity extends AppCompatActivity {
                 scoreSectionB = questionFiveAnswer + questionSixAnswer + questionSevenAnswer;
                 //summation of section C free text response
                 scoreScetionC = questionEightAnswer + questionNineAnswer + questionTenAnswer;
-                //summation of all the sections
-                scoreTotal = scoreSectionA + scoreSectionB + scoreScetionC;
 
-                //check if the correct answer are picked
-                    if (QuestionFive()){
-                    //questionFiveAnswer = +1;
+
+                //check if the correct answer are picked for question 5
+                    if (questionFive()){
+                        questionFiveAnswer = 1;
                     Log.v("MainActivity", "anser5: " + questionFiveAnswer);
                 }
                 else{
                     questionFiveAnswer = 0;
                 }
 
+                //check if the correct answer are picked for question 6
+                if (questionSix()){
+                    questionSixAnswer = 1;
+                    Log.v("MainActivity", "anser6: " + questionSixAnswer);
+                }
+                else{
+                    questionSixAnswer = 0;
+                }
+
+                //check if the correct answer are picked for question 7
+                if (questionSeven()){
+                    questionSevenAnswer = 1;
+                    Log.v("MainActivity", "anser7: " + questionSevenAnswer);
+                }
+                else{
+                    questionSevenAnswer = 0;
+                }
+
+                //summation of all the sections
+                scoreTotal = scoreSectionA + scoreSectionB + scoreScetionC;
                 Log.v("MainActivity", "total: " + scoreTotal);
                 Toast.makeText(getApplicationContext(), "You Scored: " + scoreTotal, Toast.LENGTH_SHORT).show();
 
@@ -185,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method to check for checkboxes
-    public boolean QuestionFive (){
+    public boolean questionFive (){
 
         CheckBox questionFiveOptionOne = (CheckBox) findViewById(R.id.q5_selection1);
         CheckBox questionFiveOptionTwo = (CheckBox) findViewById(R.id.q5_selection2);
@@ -193,10 +201,34 @@ public class MainActivity extends AppCompatActivity {
         CheckBox questionFiveOptionFour = (CheckBox) findViewById(R.id.q5_selection4);
 
         if (questionFiveOptionOne.isChecked() && questionFiveOptionTwo.isChecked() && questionFiveOptionThree.isChecked() && !questionFiveOptionFour.isChecked()){
-            questionFiveAnswer = +1;
             return true;
         }
         return false;
     }
+
+    //method to check for checkboxes
+    public boolean questionSix (){
+        CheckBox questionSixOptionOne = (CheckBox) findViewById(R.id.q6_selection1);
+        CheckBox questionSixOptionTwo = (CheckBox) findViewById(R.id.q6_selection2);
+        CheckBox questionSixOptionThree = (CheckBox) findViewById(R.id.q6_selection3);
+
+        if (questionSixOptionOne.isChecked() && questionSixOptionTwo.isChecked() && !questionSixOptionThree.isChecked()){
+            return true;
+        }
+        return false;
+    }
+
+    //method to check for checkboxes
+    public boolean questionSeven (){
+        CheckBox questionSevenOptionOne = (CheckBox) findViewById(R.id.q7_selection1);
+        CheckBox questionSevenOptionTwo = (CheckBox) findViewById(R.id.q7_selection2);
+        CheckBox questionSevenOptionThree = (CheckBox) findViewById(R.id.q7_selection3);
+
+        if (questionSevenOptionOne.isChecked() && questionSevenOptionTwo.isChecked() && !questionSevenOptionThree.isChecked()){
+            return true;
+        }
+        return false;
+    }
+
 
 }
