@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!--Image to be at the top position-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/quizapp_01" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to the Quiz App. Please, take your time to attempt all questions based on the Android Basic Course. Goodluck!"
+            android:textAlignment="center"
+            android:textColor="#212121"
+            android:textSize="16sp" />
+
+        <!--The view group for questions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Section A (single-selection)"
+                android:textAlignment="textStart"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <!--Start of single selection questions-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="1. What XML element is use for text?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/question_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/q1_option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionOneRadioButtonClicked"
+                    android:text="ImageView" />
+
+                <RadioButton
+                    android:id="@+id/q1_option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionOneRadioButtonClicked"
+                    android:text="ButtonView" />
+
+                <RadioButton
+                    android:id="@+id/q1_option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onQuestionOneRadioButtonClicked"
+                    android:text="TextView" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="2. Which attribute is use for scaling image?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/q2_option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionTwoRadioButtonClicked"
+                    android:text="android:scale_width" />
+
+                <RadioButton
+                    android:id="@+id/q2_option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionTwoRadioButtonClicked"
+                    android:text="android:scale_height" />
+
+                <RadioButton
+                    android:id="@+id/q2_option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onQuestionTwoRadioButtonClicked"
+                    android:text="android:scaleType" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="3. Which IDE is use for android application development?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/q3_option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionThreeRadioButtonClicked"
+                    android:text="NetBeans IDE" />
+
+                <RadioButton
+                    android:id="@+id/q3_option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionThreeRadioButtonClicked"
+                    android:text="Google App IDE" />
+
+                <RadioButton
+                    android:id="@+id/q3_option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onQuestionThreeRadioButtonClicked"
+                    android:text="Android Studio" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="4. Which folder is for holding image file?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/q4_option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionFourRadioButtonClicked"
+                    android:text="layout folder" />
+
+                <RadioButton
+                    android:id="@+id/q4_option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="onQuestionFourRadioButtonClicked"
+                    android:text="drawable folder" />
+
+                <RadioButton
+                    android:id="@+id/q4_option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onQuestionFourRadioButtonClicked"
+                    android:text="values folder" />
+            </RadioGroup>
+            <!--End of single selections-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Section B (Multi-selections)"
+                android:textAlignment="textStart"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <!--Start of mutiple selection questions-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="5. Which of these are app design steps?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q5_selection1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="Select Views"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q5_selection2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="Positions Views"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q5_selection3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="Style Views"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q5_selection4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="Draw Redlines"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="6. When new project is created, which files are opened?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q6_selection1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="activity_main.xml"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q6_selection2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="MainActivity.java"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q6_selection3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="style.class"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="7. The followings are variable declarations?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q7_selection1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="int calculatePrice = 2;"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q7_selection2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="boolean textScore = true;"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/q7_selection3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="24dp"
+                android:text="Stringmessage = Thank you"
+                android:textSize="16sp" />
+            <!--End of multi selection questions-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Section C (text response)"
+                android:textAlignment="textStart"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <!--Start of free text response-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="8. int summary = 0; summary = summary + 20; what will be the final value of summary?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/q8_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="enter your answer here"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="9. Write an if conditional operator for int summary = 5;"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/q9_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="enter your answer here"
+                android:inputType="text"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="10. For theme, write down the major items found in style.xml"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/q10_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="enter your answer here"
+                android:inputType="text"
+                android:singleLine="false" />
+
+            <!--View for Rating the question-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Difficulty Rating"
+                android:textAlignment="textStart"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:text="* What can you say about the questions?"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/easy_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Easy" />
+
+                <RadioButton
+                    android:id="@+id/moderate_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Moderate" />
+
+                <RadioButton
+                    android:id="@+id/hard_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hard" />
+            </RadioGroup>
+
+            <!--Button view group-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/reset_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reset"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/score_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:text="Score Me"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
