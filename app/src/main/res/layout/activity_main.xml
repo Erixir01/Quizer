@@ -407,7 +407,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="10. For theme, write down the major items found in style.xml"
+                android:text="10. Write down one major items found in style.xml"
                 android:textColor="#212121"
                 android:textSize="16sp" />
 
@@ -429,51 +429,6 @@
                 android:layout_marginTop="16dp"
                 android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:text="Difficulty Rating"
-                android:textAlignment="textStart"
-                android:textColor="#212121"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="16dp"
-                android:text="* What can you say about the questions?"
-                android:textColor="#212121"
-                android:textSize="16sp" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/easy_rate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Easy" />
-
-                <RadioButton
-                    android:id="@+id/moderate_rate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="Moderate" />
-
-                <RadioButton
-                    android:id="@+id/hard_rate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hard" />
-            </RadioGroup>
-
             <!--Button view group-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -484,17 +439,9 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/reset_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reset"
-                    android:textColor="#FFFFFF" />
-
-                <Button
                     android:id="@+id/score_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:text="Score Me"
                     android:textColor="#FFFFFF" />
             </LinearLayout>

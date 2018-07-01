@@ -1,3 +1,9 @@
+/**
+ * this project has no undergo code optimization
+ * please do take your time to go through it
+ * thanks you for your opportunity
+ */
+
 package com.example.android.quizer;
 
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.view.View.OnClickListener;
@@ -13,11 +20,12 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.quizer.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
-// Declaring varaible and initializing to 0
-
+// Declaring variable and initializing to 0
     int questionOneAnswer = 0;
     int questionTwoAnswer = 0;
     int questionThreeAnswer = 0;
@@ -33,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     int scoreScetionC = 0;
     int scoreTotal = 0;
     Button scoreTotalButton;
-    CheckBox questionFiveOptionOne, questionFiveOptionTwo, questionFiveOptionThree, questionFiveOptionFour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 //summation of section C free text response
                 scoreScetionC = questionEightAnswer + questionNineAnswer + questionTenAnswer;
 
-
                 //check if the correct answer are picked for question 5
                     if (questionFive()){
                         questionFiveAnswer = 1;
-                    Log.v("MainActivity", "anser5: " + questionFiveAnswer);
                 }
                 else{
                     questionFiveAnswer = 0;
@@ -67,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 //check if the correct answer are picked for question 6
                 if (questionSix()){
                     questionSixAnswer = 1;
-                    Log.v("MainActivity", "anser6: " + questionSixAnswer);
                 }
                 else{
                     questionSixAnswer = 0;
@@ -76,16 +80,52 @@ public class MainActivity extends AppCompatActivity {
                 //check if the correct answer are picked for question 7
                 if (questionSeven()){
                     questionSevenAnswer = 1;
-                    Log.v("MainActivity", "anser7: " + questionSevenAnswer);
                 }
                 else{
                     questionSevenAnswer = 0;
                 }
 
+                //section C free text response
+                // operation for question 8
+                EditText questionEight = (EditText) findViewById(R.id.q8_answer);
+                String questionEightInput = questionEight.getText().toString();
+                // check if the value entered is equal to the answer
+                if(questionEightInput.matches("20")){
+                    questionEightAnswer = 1;
+                }
+                else{
+                    questionEightAnswer = 0;
+                }
+
+                // operation for question 9
+                EditText questionNine = (EditText) findViewById(R.id.q9_answer);
+                String questionNineInput = questionNine.getText().toString();
+                // check if the value entered is equal to the answer
+                if(questionNineInput.matches("summary == 5")){
+                    questionNineAnswer = 1;
+                }
+                else{
+                    questionNineAnswer = 0;
+                }
+
+                // operation for question 10
+                EditText questionTen = (EditText) findViewById(R.id.q10_answer);
+                String questionTenInput = questionTen.getText().toString();
+                // check if the value entered is equal to the answer
+                if(questionTenInput.matches("colorPrimary") || questionTenInput.matches("colorPrimaryDark") || questionTenInput.matches("colorAccent")){
+                    questionTenAnswer = 1;
+                }
+                else{
+                    questionTenAnswer = 0;
+                }
+
                 //summation of all the sections
                 scoreTotal = scoreSectionA + scoreSectionB + scoreScetionC;
-                Log.v("MainActivity", "total: " + scoreTotal);
-                Toast.makeText(getApplicationContext(), "You Scored: " + scoreTotal, Toast.LENGTH_SHORT).show();
+                if (scoreTotal == 10){
+                    Toast.makeText(getApplicationContext(), "Congratulations. You answered correctly \nTotal Scores: " + scoreTotal, Toast.LENGTH_SHORT).show();
+                }
+                else
+                     Toast.makeText(getApplicationContext(), "Welll Done. Please check the courseware \nYou Scored: " + scoreTotal, Toast.LENGTH_SHORT).show();
 
             }
         });
